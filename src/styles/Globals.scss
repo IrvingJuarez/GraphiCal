@@ -38,3 +38,18 @@ body, #app{
         }
     }
 }
+
+@media screen and (min-width: 900px){
+    main{
+        flex-direction: row;
+    }
+    canvas, .input-field{
+        height: inherit;
+    }
+    canvas{
+        width: 70%;
+    }
+    .input-field{
+        width: 30%;
+    }
+}

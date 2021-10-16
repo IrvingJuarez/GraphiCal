@@ -1,4 +1,6 @@
 import React from "react";
+import Plane from "./Plane";
+import InputField from "./InputField";
 
 class Home extends React.Component{
     constructor(props){
@@ -7,7 +9,10 @@ class Home extends React.Component{
 
     render(){
         return(
-            <p>Hi, I am the Home</p>
+            <main>
+                <Plane />
+                <InputField />
+            </main>
         )
     }
 }

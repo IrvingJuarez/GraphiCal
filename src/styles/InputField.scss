@@ -1,6 +1,47 @@
 @import "./Globals.scss";
 
 .input-field{
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    height: 30%;
+    height: 40%;
+
+    font-family: $secondary-font;
+
+    & > *{
+        padding: 5px 9px;
+    }
+    &_header{
+        box-shadow: $shadow-one;
+    }
+    &_header, &_header > form{
+        width: 100%;
+    }
+    &_header-inputs{
+        display: flex;
+    }
+    &_header > form{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 50px;
+
+        input{
+            width: 80px;
+            height: fit-content;
+            padding: 9px;
+            border: none;
+            font-size: 1.7rem;
+        }
+        input[type=text]{
+            outline-color: $contrast-color;
+            margin-right: 5px;
+        }
+        input[type=button]{
+            border-radius: 5px;
+            background-color: $contrast-color;
+            color: $primary-color;
+            font-weight: 600;
+        }
+    }
 }

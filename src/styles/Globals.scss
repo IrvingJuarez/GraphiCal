@@ -37,6 +37,11 @@ body, #app{
             font-size: 2.2rem;
         }
     }
+    .input-field{
+        input{
+            font-size: 1.9rem;
+        }
+    }
 }
 
 @media screen and (min-width: 900px){
@@ -51,5 +56,6 @@ body, #app{
     }
     .input-field{
         width: 30%;
+        border: 1px solid $primary-clear-color;
     }
 }

@@ -10,17 +10,19 @@ class InputField extends React.Component{
     render(){
         return(
             <section className="input-field">
-                <article>
+                <article className="input-field_header">
                     <form>
-                        <div>
-                            <label htmlFor="x-axis">X: </label>
-                            <input type="text" name="x-axis" id="x-axis" />
-                        </div>
+                        <section className="input-field_header-inputs">
+                            <div>
+                                {/* <label htmlFor="x-axis">X: </label> */}
+                                <input type="text" name="x-axis" id="x-axis" placeholder="X: "/>
+                            </div>
 
-                        <div>
-                            <label htmlFor="y-axis">Y: </label>
-                            <input type="text" name="y-axis" id="y-axis" />
-                        </div>
+                            <div>
+                                {/* <label htmlFor="y-axis">Y: </label> */}
+                                <input type="text" name="y-axis" id="y-axis" placeholder="Y: "/>
+                            </div>
+                        </section>
 
                         <input type="button" value="Print" />
                     </form>

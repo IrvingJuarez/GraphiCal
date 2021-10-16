@@ -1,5 +1,7 @@
 import React from "react";
 
+import "../styles/InputField.scss";
+
 class InputField extends React.Component{
     constructor(props){
         super(props)
@@ -7,7 +9,7 @@ class InputField extends React.Component{
 
     render(){
         return(
-            <section>
+            <section className="input-field">
                 <article>
                     <form>
                         <div>

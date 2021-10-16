@@ -2,6 +2,8 @@ import React from "react";
 import Plane from "./Plane";
 import InputField from "./InputField";
 
+import "../styles/Home.scss";
+
 class Home extends React.Component{
     constructor(props){
         super(props)
@@ -9,10 +11,10 @@ class Home extends React.Component{
 
     render(){
         return(
-            <main>
+            <React.Fragment>
                 <Plane />
                 <InputField />
-            </main>
+            </React.Fragment>
         )
     }
 }

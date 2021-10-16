@@ -7,6 +7,8 @@ $contrast-color: #0579D1;
 $primary-font: 'Montserrat', sans-serif;
 $secondary-font: 'Roboto', sans-serif;
 
+$shadow-one: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
 *{
     margin: 0;
     padding: 0;
@@ -14,4 +16,25 @@ $secondary-font: 'Roboto', sans-serif;
 }
 html{
     font-size: 62.5%;
+}
+body, #app{
+    min-height: 100vh;
+}
+#app, main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100vh - 50px);
+}
+
+@media screen and (min-width: 750px){
+    main{
+        height: calc(100vh - 70px);
+    }
+    header{
+        height: 70px;
+        h2{
+            font-size: 2.2rem;
+        }
+    }
 }

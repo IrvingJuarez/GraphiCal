@@ -9,12 +9,11 @@ header{
     background-color: $secondary-color;
     color: $primary-color;
 
-    font-family: $primary-font;
-    font-weight: 400;
-    font-size: 1.9rem;
+    box-shadow: $shadow-one;
 
-    @media screen and (min-width: 750px){
-        height: 60px;
-        font-size: 2.2rem;
+    h2{
+        font-family: $primary-font;
+        font-weight: 400;
+        font-size: 1.8rem;
     }
 }

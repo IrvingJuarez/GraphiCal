@@ -1,0 +1,28 @@
+{
+  "name": "graphical",
+  "version": "1.0.0",
+  "description": "graphing calculator made with React",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IrvingJuarez/GraphiCal.git"
+  },
+  "keywords": [
+    "react",
+    "javascript",
+    "graphing-calculator"
+  ],
+  "author": "Irving Juárez <irvingjuarez274@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/IrvingJuarez/GraphiCal/issues"
+  },
+  "homepage": "https://github.com/IrvingJuarez/GraphiCal#readme",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}

@@ -61,7 +61,7 @@ const printHorizontalLines = (width, height) => {
         ctx.moveTo(-width, y)
         ctx.lineTo(width, y)
         // ctx.stroke()
-        everyFiveLines(y, 10, y + 5)
+        everyFiveLines(-y, 10, y + 5)
     }
 
     for(let y2 = -size; y2 > -height; y2 -= size){
@@ -69,7 +69,7 @@ const printHorizontalLines = (width, height) => {
         ctx.moveTo(-width, y2)
         ctx.lineTo(width, y2)
         // ctx.stroke()
-        everyFiveLines(y2, 10, y2 + 5)
+        everyFiveLines(-y2, 10, y2 + 5)
     }
 }
 

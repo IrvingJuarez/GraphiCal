@@ -22,8 +22,10 @@ const printMainAxis = (width, height) => {
     ctx.restore()
 }
 
-const everyFiveLines = (variable) => {
-    if(variable % 125 == 0){
+const everyFiveLines = (variable, textX, textY) => {
+    if(variable % (size * 5) == 0){
+        ctx.fillText(variable / size, textX, textY)
+
         ctx.save()
         ctx.lineWidth = 1;
         ctx.stroke()
@@ -41,14 +43,15 @@ const printVerticalLines = (width, height) => {
         ctx.beginPath()
         ctx.moveTo(x, -height)
         ctx.lineTo(x, height)
-        everyFiveLines(x)
+        everyFiveLines(x, x - 5, 17)
     }
 
     for(let x2 = -size; x2 > -width; x2 -= size){
         ctx.beginPath()
         ctx.moveTo(x2, -height)
         ctx.lineTo(x2, height)
-        everyFiveLines(x2)
+        // ctx.stroke()
+        everyFiveLines(x2, x2 - 5, 17)
     }
 }
 
@@ -57,14 +60,16 @@ const printHorizontalLines = (width, height) => {
         ctx.beginPath()
         ctx.moveTo(-width, y)
         ctx.lineTo(width, y)
-        everyFiveLines(y)
+        // ctx.stroke()
+        everyFiveLines(y, 10, y + 5)
     }
 
     for(let y2 = -size; y2 > -height; y2 -= size){
         ctx.beginPath()
         ctx.moveTo(-width, y2)
         ctx.lineTo(width, y2)
-        everyFiveLines(y2)
+        // ctx.stroke()
+        everyFiveLines(y2, 10, y2 + 5)
     }
 }
 
@@ -81,8 +86,9 @@ const printGrid = () => {
 const createGrid = (component) => {
     canvas = document.querySelector("canvas");
     ctx = canvas.getContext("2d")
-
+    
     sizeCanvas(canvas)
+    ctx.font = '500 1.7rem serif';
     printGrid()
     
     canvas.addEventListener("resize", () => {

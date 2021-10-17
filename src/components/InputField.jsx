@@ -1,10 +1,45 @@
 import React from "react";
+import printDot from "../utils/printDot"
 
 import "../styles/InputField.scss";
 
 class InputField extends React.Component{
     constructor(props){
         super(props)
+        this.state = {
+            abled: false
+        }
+
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleRequest(){
+        printDot()
+    }
+
+    renderBtn(){
+        if(this.state.abled){
+            return(
+                <input type="button" value="Print" onClick={this.handleRequest}/>
+            )
+        }else{
+            return(
+                <input type="button" value="Print" className="disabled"/>
+            )
+        }
+    }
+
+    handleChange(){
+        if(this.xaxis.value && this.yaxis.value){
+            this.setState({
+                abled: true
+            })
+        }
+    }
+    
+    componentDidMount(){
+        this.xaxis = document.querySelector("#xAxis")
+        this.yaxis = document.querySelector("#yAxis")
     }
 
     render(){
@@ -14,17 +49,17 @@ class InputField extends React.Component{
                     <form>
                         <section className="input-field_header-inputs">
                             <div>
-                                {/* <label htmlFor="x-axis">X: </label> */}
-                                <input type="text" name="x-axis" id="x-axis" placeholder="X: "/>
+                                <input type="number" name="x-axis" id="xAxis" placeholder="X: " onChange={this.handleChange} />
+                                {/* <input type="text" name="x-axis" id="x-axis" placeholder="X: "/> */}
                             </div>
 
                             <div>
-                                {/* <label htmlFor="y-axis">Y: </label> */}
-                                <input type="text" name="y-axis" id="y-axis" placeholder="Y: "/>
+                                <input type="number" name="y-axis" id="yAxis" placeholder="Y: " onChange={this.handleChange} />
+                                {/* <input type="text" name="y-axis" id="y-axis" placeholder="Y: "/> */}
                             </div>
                         </section>
 
-                        <input type="button" value="Print" />
+                        {this.renderBtn()}
                     </form>
                 </article>
             </section>

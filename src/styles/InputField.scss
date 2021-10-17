@@ -34,7 +34,7 @@
             border: none;
             font-size: 1.7rem;
         }
-        input[type=text]{
+        input[type=text], input[type=number]{
             outline-color: $contrast-color;
             margin-right: 5px;
         }
@@ -43,6 +43,13 @@
             background-color: $contrast-color;
             color: $primary-color;
             font-weight: 600;
+
+            cursor: pointer;
         }
     }
+}
+
+.disabled{
+    opacity: 0.5;
+    pointer-events: none;
 }

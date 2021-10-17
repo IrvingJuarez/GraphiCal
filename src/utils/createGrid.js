@@ -1,4 +1,4 @@
-let canvas, ctx, size = 50
+let canvas, ctx, size = 25
 
 const sizeCanvas = (element) => {
     let width = element.offsetWidth;
@@ -22,6 +22,17 @@ const printMainAxis = (width, height) => {
     ctx.restore()
 }
 
+const everyFiveLines = (variable) => {
+    if(variable % 125 == 0){
+        ctx.save()
+        ctx.lineWidth = 1;
+        ctx.stroke()
+        ctx.restore()
+    }else{
+        ctx.stroke()
+    }
+}
+
 const printVerticalLines = (width, height) => {
     ctx.strokeStyle = "rgba(0,0,0,0.5)";
     ctx.lineWidth = 0.5;
@@ -30,14 +41,14 @@ const printVerticalLines = (width, height) => {
         ctx.beginPath()
         ctx.moveTo(x, -height)
         ctx.lineTo(x, height)
-        ctx.stroke()
+        everyFiveLines(x)
     }
 
     for(let x2 = -size; x2 > -width; x2 -= size){
         ctx.beginPath()
         ctx.moveTo(x2, -height)
         ctx.lineTo(x2, height)
-        ctx.stroke()
+        everyFiveLines(x2)
     }
 }
 
@@ -46,14 +57,14 @@ const printHorizontalLines = (width, height) => {
         ctx.beginPath()
         ctx.moveTo(-width, y)
         ctx.lineTo(width, y)
-        ctx.stroke()
+        everyFiveLines(y)
     }
 
     for(let y2 = -size; y2 > -height; y2 -= size){
         ctx.beginPath()
         ctx.moveTo(-width, y2)
         ctx.lineTo(width, y2)
-        ctx.stroke()
+        everyFiveLines(y2)
     }
 }
 

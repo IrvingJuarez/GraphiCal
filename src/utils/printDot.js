@@ -20,6 +20,7 @@ class Coordinate {
         c.setState({
             abled: false
         })
+        // console.log(c)
     }
 }
 

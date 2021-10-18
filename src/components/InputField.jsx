@@ -36,11 +36,12 @@ class InputField extends React.Component{
 
     renderCoordinates(){
         if(this.state.coordinates.length >= 1){
-            for(let i = 0; i < this.state.coordinates.length; i++){
-                return(
-                    <Point />
-                )
+            let arr = []
+            for(let i of this.state.coordinates){
+                arr.push(<Point key={arr.length} x={i.x / size} y={(i.y / size) * -1}/>)
             }
+
+            return arr
         }
     }
 

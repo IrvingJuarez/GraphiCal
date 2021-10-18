@@ -12,7 +12,7 @@ class Point extends React.Component{
             <article className="point">
                 <div>
                     <i></i>
-                    <p>[x, y]</p>
+                    <p>[ {this.props.x}, {this.props.y} ]</p>
                 </div>
 
                 <button>X</button>

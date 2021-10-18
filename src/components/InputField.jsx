@@ -38,7 +38,7 @@ class InputField extends React.Component{
         if(this.state.coordinates.length >= 1){
             let arr = []
             for(let i of this.state.coordinates){
-                arr.push(<Point key={arr.length} x={i.x / size} y={(i.y / size) * -1}/>)
+                arr.push(<Point key={arr.length} x={i.x / size} y={(i.y / size) * -1} c={this} />)
             }
 
             return arr

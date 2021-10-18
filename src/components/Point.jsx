@@ -1,7 +1,7 @@
 import React from "react"
 
 import { ctx2, size } from "../utils/createGrid"
-import { radius, startAngle, endAngle } from "../utils/printDot"
+import { radius } from "../utils/printDot"
 
 import "../styles/Point.scss"
 
@@ -13,7 +13,21 @@ class Point extends React.Component{
     }
 
     handleClick(){
-        ctx2.clearRect(this.props.x * size - radius, this.props.y * size * -1 - radius, radius * 2, radius * 2)
+        let x = this.props.x * size - radius
+        let y = this.props.y * size * -1 - radius
+        let arr = this.props.c.state.coordinates
+
+        ctx2.clearRect(x, y, radius * 2, radius * 2)
+
+        arr.forEach(dot => {
+            if(dot.x == x + 5 && dot.y == y + 5){
+                let index = arr.indexOf(dot)
+                arr.splice(index, 1)
+                this.props.c.setState({
+                    abled: false
+                })
+            }
+        });
     }
 
     render(){

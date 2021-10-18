@@ -100,6 +100,7 @@ const createGrid = (component) => {
     
     ctx.font = '500 1.7rem serif';
     printGrid()
+    ctx2.fillStyle = "#0579D1"
 }
 
 export default createGrid;

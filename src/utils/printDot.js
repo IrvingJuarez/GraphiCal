@@ -25,7 +25,7 @@ class Coordinate {
 }
 
 const printDot = (x, y, component) => {
-    console.log(ctx2)
+    // console.log(ctx2)
     let newCoor = new Coordinate(x, y, component)
     newCoor.draw(component)
 }

@@ -1,6 +1,6 @@
 import React from "react"
 
-import { ctx2 } from "../utils/createGrid"
+import { ctx2, size } from "../utils/createGrid"
 import { radius, startAngle, endAngle } from "../utils/printDot"
 
 import "../styles/Point.scss"
@@ -13,10 +13,7 @@ class Point extends React.Component{
     }
 
     handleClick(){
-        // ctx.beginPath()
-        ctx2.globalCompositeOperation = 'destination-out'
-        ctx2.arc(this.props.x, this.props.y, radius, startAngle, endAngle);
-        ctx2.fill();
+        ctx2.clearRect(this.props.x * size - radius, this.props.y * size * -1 - radius, radius * 2, radius * 2)
     }
 
     render(){

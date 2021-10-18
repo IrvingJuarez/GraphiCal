@@ -52,10 +52,10 @@ body, #app{
     main{
         flex-direction: row;
     }
-    canvas, .input-field{
+    .canvas-container, .input-field{
         height: inherit;
     }
-    canvas{
+    .canvas-container{
         width: 70%;
     }
     .input-field{

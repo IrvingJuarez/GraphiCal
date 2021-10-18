@@ -15,7 +15,9 @@ class Plane extends React.Component{
 
     render(){
         return(
-            <canvas></canvas>
+            <section className="canvas-container">
+                <canvas></canvas>
+            </section>
         )
     }
 }

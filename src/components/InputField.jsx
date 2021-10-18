@@ -9,10 +9,8 @@ class InputField extends React.Component{
         super(props)
         this.state = {
             abled: false,
-            coordinates: false
+            coordinates: []
         }
-
-        this.coordinates = []
 
         this.handleChange = this.handleChange.bind(this);
         this.handleRequest = this.handleRequest.bind(this);
@@ -35,7 +33,7 @@ class InputField extends React.Component{
     }
 
     renderCoordinates(){
-        if(this.state.coordinates){
+        if(this.state.coordinates.length >= 1){
             return(
                 <p>Hello World</p>
             )
@@ -51,8 +49,6 @@ class InputField extends React.Component{
     }
     
     componentDidMount(){
-        this.dots = []
-
         this.xaxis = document.querySelector("#xAxis")
         this.yaxis = document.querySelector("#yAxis")
     }

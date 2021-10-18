@@ -14,8 +14,12 @@ class Coordinate {
         ctx.arc(this.x, this.y, radius, startAngle, endAngle)
         ctx.fill()
 
-        c.coordinates = c.coordinates.push("12")
-        console.log(c)
+        c.state.coordinates.push("12")
+        c.xaxis.value = ""
+        c.yaxis.value = ""
+        c.setState({
+            abled: false
+        })
     }
 }
 

@@ -98,4 +98,4 @@ const createGrid = (component) => {
 }
 
 export default createGrid;
-export { ctx }
+export { ctx, size }

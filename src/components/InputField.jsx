@@ -79,7 +79,9 @@ class InputField extends React.Component{
                     </form>
                 </article>
 
-                {this.renderCoordinates()}
+                <section className="points-container">
+                    {this.renderCoordinates()}
+                </section>
             </section>
         )
     }

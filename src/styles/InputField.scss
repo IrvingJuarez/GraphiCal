@@ -9,7 +9,10 @@
 
     font-family: $secondary-font;
 
-    & > *{
+    .points-container{
+        overflow-y: auto;
+    }
+    &_header, .points-container > *{
         padding: 5px 9px;
     }
     &_header{

@@ -30,3 +30,4 @@ const printDot = (x, y, component) => {
 }
 
 export default printDot;
+export { radius, startAngle, endAngle }

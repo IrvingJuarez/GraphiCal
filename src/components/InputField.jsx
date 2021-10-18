@@ -11,10 +11,11 @@ class InputField extends React.Component{
         }
 
         this.handleChange = this.handleChange.bind(this);
+        this.handleRequest = this.handleRequest.bind(this);
     }
 
     handleRequest(){
-        printDot()
+        printDot(this.xaxis.value, this.yaxis.value)
     }
 
     renderBtn(){

@@ -1,5 +1,6 @@
 import React from "react";
 import printDot from "../utils/printDot"
+import { size } from "../utils/createGrid"
 
 import "../styles/InputField.scss";
 
@@ -7,15 +8,18 @@ class InputField extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            abled: false
+            abled: false,
+            coordinates: false
         }
+
+        this.coordinates = []
 
         this.handleChange = this.handleChange.bind(this);
         this.handleRequest = this.handleRequest.bind(this);
     }
 
     handleRequest(){
-        printDot(this.xaxis.value, this.yaxis.value)
+        printDot(this.xaxis.value * size, this.yaxis.value * size * -1, this)
     }
 
     renderBtn(){
@@ -30,6 +34,14 @@ class InputField extends React.Component{
         }
     }
 
+    renderCoordinates(){
+        if(this.state.coordinates){
+            return(
+                <p>Hello World</p>
+            )
+        }
+    }
+
     handleChange(){
         if(this.xaxis.value && this.yaxis.value){
             this.setState({
@@ -39,6 +51,8 @@ class InputField extends React.Component{
     }
     
     componentDidMount(){
+        this.dots = []
+
         this.xaxis = document.querySelector("#xAxis")
         this.yaxis = document.querySelector("#yAxis")
     }
@@ -62,6 +76,10 @@ class InputField extends React.Component{
 
                         {this.renderBtn()}
                     </form>
+                </article>
+
+                <article>
+                    {this.renderCoordinates()}
                 </article>
             </section>
         )

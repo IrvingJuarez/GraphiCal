@@ -1,14 +1,27 @@
-import { ctx, size } from "./createGrid"
+import { ctx } from "./createGrid"
+const radius = 5, startAngle = 0, endAngle = Math.PI * 2
 
-const printDot = (x, y) => {
-    ctx.fillStyle = "#0579D1";
-    x *= size;
-    y *= size;
-    y *= -1;
+class Coordinate {
+    constructor(x, y){
+        this.x = x;
+        this.y = y;
 
-    ctx.beginPath()
-    ctx.arc(x, y, 5, 0, Math.PI * 2)
-    ctx.fill()
+        this.draw = this.draw.bind(this)
+    }
+
+    draw(c){
+        ctx.beginPath()
+        ctx.arc(this.x, this.y, radius, startAngle, endAngle)
+        ctx.fill()
+
+        c.coordinates = c.coordinates.push("12")
+        console.log(c)
+    }
+}
+
+const printDot = (x, y, component) => {
+    let newCoor = new Coordinate(x, y, component)
+    newCoor.draw(component)
 }
 
 export default printDot;

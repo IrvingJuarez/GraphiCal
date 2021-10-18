@@ -81,6 +81,8 @@ const printGrid = () => {
     printMainAxis(width, height)
     printVerticalLines(width, height)
     printHorizontalLines(width, height)
+    
+    ctx.fillStyle = "#0579D1";
 }
 
 const createGrid = (component) => {

@@ -1,4 +1,4 @@
-let canvas, ctx, size = 25
+let canvas, layer, ctx, ctx2, size = 25
 
 const sizeCanvas = (element) => {
     let width = element.offsetWidth;
@@ -77,27 +77,30 @@ const printGrid = () => {
     let width = canvas.width / 2
     let height = canvas.height / 2
     ctx.translate(width, height)
+    ctx2.translate(width, height)
 
     printMainAxis(width, height)
     printVerticalLines(width, height)
     printHorizontalLines(width, height)
-    
-    ctx.fillStyle = "#0579D1";
+}
+
+const gettingContext = () => {
+    canvas = document.querySelector(".canvas_grid");
+    layer = document.querySelector(".canvas_layer")
+
+    ctx = canvas.getContext("2d")
+    ctx2 = layer.getContext("2d")
+
+    sizeCanvas(canvas)
+    sizeCanvas(layer)
 }
 
 const createGrid = (component) => {
-    canvas = document.querySelector("canvas");
-    ctx = canvas.getContext("2d")
+    gettingContext()
     
-    sizeCanvas(canvas)
     ctx.font = '500 1.7rem serif';
     printGrid()
-    
-    canvas.addEventListener("resize", () => {
-        sizeCanvas(canvas)
-        printGrid()
-    })
 }
 
 export default createGrid;
-export { ctx, size }
+export { ctx2, size }

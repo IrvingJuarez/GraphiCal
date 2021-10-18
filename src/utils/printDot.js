@@ -1,4 +1,4 @@
-import { ctx } from "./createGrid"
+import { ctx2 } from "./createGrid"
 const radius = 5, startAngle = 0, endAngle = Math.PI * 2
 
 class Coordinate {
@@ -10,9 +10,9 @@ class Coordinate {
     }
 
     draw(c){
-        ctx.beginPath()
-        ctx.arc(this.x, this.y, radius, startAngle, endAngle)
-        ctx.fill()
+        ctx2.beginPath()
+        ctx2.arc(this.x, this.y, radius, startAngle, endAngle)
+        ctx2.fill()
 
         c.state.coordinates.push(this)
         c.xaxis.value = ""
@@ -25,6 +25,7 @@ class Coordinate {
 }
 
 const printDot = (x, y, component) => {
+    console.log(ctx2)
     let newCoor = new Coordinate(x, y, component)
     newCoor.draw(component)
 }

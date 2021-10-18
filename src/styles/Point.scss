@@ -1,0 +1,32 @@
+@import "./Globals.scss";
+
+.point{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid $primary-clear-color;
+    font-size: 1.9rem;
+    div{
+        display: flex;
+        align-items: center;
+        padding: 9px;
+        i{
+            display: block;
+            width: 15px;
+            height: 15px;
+            margin-right: 9px;
+            border-radius: 50%;
+            background-color: $contrast-color;
+        }
+    }
+    button{
+        margin: 0 3px;
+        font-family: $primary-font;
+        font-size: 1.9rem;
+        background: none;
+        border: none;
+
+        cursor: pointer;
+    }
+}

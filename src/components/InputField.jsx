@@ -1,4 +1,6 @@
 import React from "react";
+import Point from "./Point"
+
 import printDot from "../utils/printDot"
 import { size } from "../utils/createGrid"
 
@@ -34,9 +36,11 @@ class InputField extends React.Component{
 
     renderCoordinates(){
         if(this.state.coordinates.length >= 1){
-            return(
-                <p>Hello World</p>
-            )
+            for(let i = 0; i < this.state.coordinates.length; i++){
+                return(
+                    <Point />
+                )
+            }
         }
     }
 
@@ -74,9 +78,7 @@ class InputField extends React.Component{
                     </form>
                 </article>
 
-                <article>
-                    {this.renderCoordinates()}
-                </article>
+                {this.renderCoordinates()}
             </section>
         )
     }

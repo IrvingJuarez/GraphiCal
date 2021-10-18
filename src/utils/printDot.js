@@ -14,7 +14,7 @@ class Coordinate {
         ctx.arc(this.x, this.y, radius, startAngle, endAngle)
         ctx.fill()
 
-        c.state.coordinates.push("12")
+        c.state.coordinates.push(this)
         c.xaxis.value = ""
         c.yaxis.value = ""
         c.setState({
